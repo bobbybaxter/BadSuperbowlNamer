@@ -141,5 +141,16 @@ namespace BadSuperbowlNamer.Tests
 
             Assert.Equal("XCIX", result);
         }
+
+        [Fact]
+        public void Number500ShouldOutputD()
+        {
+            var number = 500;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("D", result);
+        }
     }
 }

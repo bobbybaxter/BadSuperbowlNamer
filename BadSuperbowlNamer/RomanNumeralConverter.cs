@@ -11,59 +11,43 @@ namespace BadSuperbowlNamer
             var value = number;
             List<string> parts = new List<string>();
 
-            while (value != 0)
+            int valueCheck(int passedValue, int numberToCheck, string romanNumeralSymbol)
             {
-                if (value >= 90 && value % 90 >= 0)
+                if (passedValue >= numberToCheck && passedValue % numberToCheck >= 0)
                 {
-                    parts.Add("XC");
-                    value -= 90;
+                    parts.Add(romanNumeralSymbol);
+                    passedValue -= numberToCheck;
+                    return passedValue;
                 }
+                return passedValue;
+            }
 
-                if (value >= 60 && value % 60 >= 0)
+            int valueCheckWithLoop(int passedValue, int numberToCheck, string romanNumeralSymbol)
+            {
+                if (passedValue >= numberToCheck && passedValue % numberToCheck >= 0)
                 {
-                    parts.Add("LX");
-                    value -= 60;
-                }
-
-                if (value >= 40 && value % 40 >= 0)
-                {
-                    parts.Add("XL");
-                    value -= 40;
-                }
-
-                if (value >= 10 && value % 10 >= 0)
-                {
-                    int quotient = value / 10;
+                    int quotient = passedValue / numberToCheck;
                     for (var i = 0; i < quotient; i++)
                     {
-                        parts.Add("X");
-                        value -= 10;
+                        parts.Add(romanNumeralSymbol);
+                        passedValue -= numberToCheck;
                     }
+                    return passedValue;
                 }
+                return passedValue;
+            }
 
-                if (value >= 9 && value % 9 >= 0)
-                {
-                    parts.Add("IX");
-                    value -= 9;
-                }
-
-                if (value >= 5 && value % 5 >= 0)
-                {
-                    parts.Add("V");
-                    value -= 5;
-                }
-
-                if (value >= 4 && value % 4 >= 0)
-                {
-                    parts.Add("IV");
-                    value -= 4;
-                }
-
-                if (value >= 1  && value % 1 == 0)
-                {
-                    parts.Add("I");
-                    value--;
-                }
+            while (value != 0)
+            {
+                value = valueCheckWithLoop(value, 500, "D");
+                value = valueCheck(value, 90, "XC");
+                value = valueCheck(value, 60, "LX");
+                value = valueCheck(value, 40, "XL");
+                value = valueCheckWithLoop(value, 10, "X");
+                value = valueCheck(value, 9, "IX");
+                value = valueCheck(value, 5, "V");
+                value = valueCheck(value, 4, "IV");
+                value = valueCheck(value, 1, "I");
             }
 
             var RomanNumeral = String.Join("", parts);
