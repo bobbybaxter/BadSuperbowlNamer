@@ -119,5 +119,27 @@ namespace BadSuperbowlNamer.Tests
 
             Assert.Equal("LXXXIII", result);
         }
+
+        [Fact]
+        public void Number97ShouldOutputXCVII()
+        {
+            var number = 97;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("XCVII", result);
+        }
+
+        [Fact]
+        public void Number99ShouldOutputXCIX()
+        {
+            var number = 99;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("XCIX", result);
+        }
     }
 }
