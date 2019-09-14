@@ -99,7 +99,7 @@ namespace BadSuperbowlNamer.Tests
         }
 
         [Fact]
-        public void Number68ShouldOutputlLXVIII()
+        public void Number68ShouldOutputLXVIII()
         {
             var number = 68;
             var converter = new RomanNumeralConverter();
@@ -107,6 +107,17 @@ namespace BadSuperbowlNamer.Tests
             var result = converter.ConvertNumber(number);
 
             Assert.Equal("LXVIII", result);
+        }
+
+        [Fact]
+        public void Number83ShouldOutputLXXXIII()
+        {
+            var number = 83;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("LXXXIII", result);
         }
     }
 }
