@@ -196,5 +196,16 @@ namespace BadSuperbowlNamer.Tests
 
             Assert.Equal("DCCCXCI", result);
         }
+
+        [Fact]
+        public void Number1000ShouldOutputM()
+        {
+            var number = 1000;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("M", result);
+        }
     }
 }

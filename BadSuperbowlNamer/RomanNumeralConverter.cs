@@ -39,6 +39,7 @@ namespace BadSuperbowlNamer
 
             while (value != 0)
             {
+                value = valueCheckWithLoop(value, 1000, "M");
                 value = valueCheck(value, 800, "DCCC");
                 value = valueCheck(value, 700, "DCC");
                 value = valueCheck(value, 600, "DC");
