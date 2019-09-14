@@ -13,6 +13,12 @@ namespace BadSuperbowlNamer
 
             while (value != 0)
             {
+                if (value >= 60 && value % 60 >= 0)
+                {
+                    parts.Add("LX");
+                    value -= 60;
+                }
+
                 if (value >= 40 && value % 40 >= 0)
                 {
                     parts.Add("XL");

@@ -86,5 +86,27 @@ namespace BadSuperbowlNamer.Tests
 
             Assert.Equal("XLIV", result);
         }
+
+        [Fact]
+        public void Number45ShouldOutputXLV()
+        {
+            var number = 45;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("XLV", result);
+        }
+
+        [Fact]
+        public void Number68ShouldOutputlLXVIII()
+        {
+            var number = 68;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("LXVIII", result);
+        }
     }
 }
