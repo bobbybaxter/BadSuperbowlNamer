@@ -152,5 +152,27 @@ namespace BadSuperbowlNamer.Tests
 
             Assert.Equal("D", result);
         }
+
+        [Fact]
+        public void Number501ShouldOutputDI()
+        {
+            var number = 501;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("DI", result);
+        }
+
+        [Fact]
+        public void Number649ShouldOutputDCXLIX()
+        {
+            var number = 649;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("DCXLIX", result);
+        }
     }
 }
