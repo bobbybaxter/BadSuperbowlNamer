@@ -8,17 +8,26 @@ namespace BadSuperbowlNamer
     {
         public string ConvertNumber(int number)
         {
-            var input = number;
-            string numeralResult = "No number selected";
+            var value = number;
+            List<string> parts = new List<string>();
 
-            if (input == 1)
+            while (value != 0)
             {
-                numeralResult = "I";
-                return numeralResult;
-            }
-            
-            return numeralResult;
+                if (value > 0 && value % 5 == 0)
+                {
+                    parts.Add("V");
+                    value -= 5;
+                }
 
+                if (value > 0 && value % 1 == 0)
+                {
+                    parts.Add("I");
+                    value--;
+                }
+            }
+
+            var RomanNumeral = String.Join("", parts);
+            return RomanNumeral;
         }
     }
 }

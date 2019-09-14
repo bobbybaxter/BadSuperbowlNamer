@@ -18,5 +18,18 @@ namespace BadSuperbowlNamer.Tests
             //Assert
             Assert.Equal("I", result);
         }
+
+        [Fact]
+        public void Number5ShouldOutputV()
+        {
+            var number = 5;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("V", result);
+
+
+        }
     }
 }
