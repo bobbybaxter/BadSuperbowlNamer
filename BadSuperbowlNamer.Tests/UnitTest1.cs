@@ -31,5 +31,16 @@ namespace BadSuperbowlNamer.Tests
 
 
         }
+
+        [Fact]
+        public void Number9ShouldOutputIX()
+        {
+            var number = 9;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("IX", result);
+        }
     }
 }
