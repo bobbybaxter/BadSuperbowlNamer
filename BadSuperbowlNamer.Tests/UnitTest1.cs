@@ -53,5 +53,16 @@ namespace BadSuperbowlNamer.Tests
 
             Assert.Equal("XII", result);
         }
+
+        [Fact]
+        public void Number16ShouldOutputXVI()
+        {
+            var number = 16;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("XVI", result);
+        }
     }
 }

@@ -19,19 +19,19 @@ namespace BadSuperbowlNamer
                     value -= 10;
                 }
 
-                if (value > 0 && value % 9 == 0)
+                if (value >= 9 && value % 9 >= 0)
                 {
                     parts.Add("IX");
                     value -= 9;
                 }
 
-                if (value > 0 && value % 5 == 0)
+                if (value >= 5 && value % 5 >= 0)
                 {
                     parts.Add("V");
                     value -= 5;
                 }
 
-                if (value > 0 && value % 1 == 0)
+                if (value >= 1  && value % 1 == 0)
                 {
                     parts.Add("I");
                     value--;
