@@ -42,5 +42,16 @@ namespace BadSuperbowlNamer.Tests
 
             Assert.Equal("IX", result);
         }
+
+        [Fact]
+        public void Number12ShouldOutputXII()
+        {
+            var number = 12;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("XII", result);
+        }
     }
 }
