@@ -174,5 +174,16 @@ namespace BadSuperbowlNamer.Tests
 
             Assert.Equal("DCXLIX", result);
         }
+
+        [Fact]
+        public void Number798ShouldOutputDCCXCVIII()
+        {
+            var number = 798;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("DCCXCVIII", result);
+        }
     }
 }
