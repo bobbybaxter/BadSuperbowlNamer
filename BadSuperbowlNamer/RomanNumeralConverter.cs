@@ -15,8 +15,12 @@ namespace BadSuperbowlNamer
             {
                 if (value >= 10 && value % 10 >= 0)
                 {
-                    parts.Add("X");
-                    value -= 10;
+                    int quotient = value / 10;
+                    for (var i = 0; i < quotient; i++)
+                    {
+                        parts.Add("X");
+                        value -= 10;
+                    }
                 }
 
                 if (value >= 9 && value % 9 >= 0)

@@ -64,5 +64,16 @@ namespace BadSuperbowlNamer.Tests
 
             Assert.Equal("XVI", result);
         }
+
+        [Fact]
+        public void Number29ShouldOutputXXIV()
+        {
+            var number = 29;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("XXIX", result);
+        }
     }
 }
