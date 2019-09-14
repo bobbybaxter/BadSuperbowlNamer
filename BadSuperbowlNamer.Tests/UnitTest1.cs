@@ -207,5 +207,60 @@ namespace BadSuperbowlNamer.Tests
 
             Assert.Equal("M", result);
         }
+
+        [Fact]
+        public void Number1004ShouldOutputMIV()
+        {
+            var number = 1004;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("MIV", result);
+        }
+
+        [Fact]
+        public void Number1006ShouldOutputMVI()
+        {
+            var number = 1006;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("MVI", result);
+        }
+
+        [Fact]
+        public void Number1023ShouldOutputMXXIII()
+        {
+            var number = 1023;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("MXXIII", result);
+        }
+
+        [Fact]
+        public void Number2014ShouldOutputMMXIV()
+        {
+            var number = 2014;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("MMXIV", result);
+        }
+
+        [Fact]
+        public void Number3999ShouldOutputMMMCMXCIX()
+        {
+            var number = 3999;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("MMMCMXCIX", result);
+        }
     }
 }
