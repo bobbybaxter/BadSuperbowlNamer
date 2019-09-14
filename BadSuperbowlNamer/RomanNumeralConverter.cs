@@ -13,6 +13,12 @@ namespace BadSuperbowlNamer
 
             while (value != 0)
             {
+                if (value >= 40 && value % 40 >= 0)
+                {
+                    parts.Add("XL");
+                    value -= 40;
+                }
+
                 if (value >= 10 && value % 10 >= 0)
                 {
                     int quotient = value / 10;
@@ -33,6 +39,12 @@ namespace BadSuperbowlNamer
                 {
                     parts.Add("V");
                     value -= 5;
+                }
+
+                if (value >= 4 && value % 4 >= 0)
+                {
+                    parts.Add("IV");
+                    value -= 4;
                 }
 
                 if (value >= 1  && value % 1 == 0)

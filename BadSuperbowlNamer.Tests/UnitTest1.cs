@@ -66,7 +66,7 @@ namespace BadSuperbowlNamer.Tests
         }
 
         [Fact]
-        public void Number29ShouldOutputXXIV()
+        public void Number29ShouldOutputXXIX()
         {
             var number = 29;
             var converter = new RomanNumeralConverter();
@@ -74,6 +74,17 @@ namespace BadSuperbowlNamer.Tests
             var result = converter.ConvertNumber(number);
 
             Assert.Equal("XXIX", result);
+        }
+
+        [Fact]
+        public void Number44ShouldOutputXLIV()
+        {
+            var number = 44;
+            var converter = new RomanNumeralConverter();
+
+            var result = converter.ConvertNumber(number);
+
+            Assert.Equal("XLIV", result);
         }
     }
 }
